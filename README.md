@@ -37,7 +37,7 @@ view project details, filter issues by multiple labels, author, search by title,
 
 ## Installation
 # Clone the repository
-https://github.com/vikramankdeo/Issues_Tracker_project.git
+https://github.com/vikramankdeo/Issue_Tracker_project.git
 
 # Navigate to the project directory
 cd Issues_tracker_project
