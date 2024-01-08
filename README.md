@@ -2,7 +2,7 @@
 git link -:  https://github.com/vikramankdeo/Issue_Tracker_project.git
 
 ## Images
-![294894433-87fe3702-69ea-4c2e-8be7-602de251a71a](https://github.com/vikramankdeo/Issue_Tracker_project/assets/144257125/205442ed-33ab-42a7-90a5-e7084c246adc)
+![image](https://github.com/vikramankdeo/Issue_Tracker_project/assets/144257125/cbc446e1-fda6-428f-aafc-d9f4bf070d3d)
 Homepage
 
 
