@@ -67,7 +67,7 @@ module.exports.filter_issues =  async (req, res) => {
             { pid: req.params.id }, // Match by specific pid (req.params.id)
             {
               $or: [
-                { title: { $regex: searchText, $options: 'i' } }, // Case-insensitive search in 'title' field
+                { label: { $regex: searchText, $options: 'i' } }, // Case-insensitive search in 'title' field
                 {
                   $or: [
                     { description: { $regex: searchText, $options: 'i' } }, // Case-insensitive search for partial match in 'description'
