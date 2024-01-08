@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Issue Tracker</title>
+  <link rel = "stylesheet" href = "/css/home.css">
+</head>
+<body>
+  
+  <div class="header">
+    <div class="logo">Issue Tracker</div> <!-- Replace 'YourLogo' with your desired logo text -->
+    <button class="top-right-button" onclick = "createnewproject()"> Create New Project</button>
+  </div>
+  <h3>Projects</h3>
+  <ul>
+    <% projects.forEach((project) => { %>
+      <li id = "<%= project._id %>">
+        <!-- Display project details -->
+        <a href="/project/<%= project._id %>/issues" method = "GET" target = "_blank"><strong>Name:</strong> <%= project.title %></a><br>
+        <strong>Description:</strong> <%= project.description %><br>
+        <strong>Created At:</strong> <%= project.createdAt %><br>
+        <!-- Add other fields as needed -->
+        <a class="remove-link" onclick="removeProject('<%= project._id %>')">Remove</a>
+
+      </li>
+    <% }); %>
+  </ul>
+
+  <script src = "/js/home.js">
+    
+  </script>
+</body>
+</html>

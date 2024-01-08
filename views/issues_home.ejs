@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Page Title</title>
+  <link rel="stylesheet" href="/css/issue.css">
+</head>
+<body onload="myFunction()">
+  <!-- Your form and other HTML content -->
+<!-- Your HTML content in the .ejs file -->
+<div class="issueheader">
+  <div class="logo">Issue Tracker</div> <!-- Replace 'YourLogo' with your desired logo text -->
+  <button class="top-right-button" onclick = "createnewissue('<%=project[0]._id%>')"> Create New Issue</button>
+</div>
+<form id="filterForm">
+  <div class="dropdown">
+    <p onclick="toggleDropdown('labelDropdown')" class="dropbtn">Select Labels</p>
+    <div id="labelDropdown" class="dropdown-content">
+      <% labels.forEach(label => { %>
+        <label><input type="checkbox" name="labels" value="<%= label %>"> <%= label %></label>
+      <% }) %>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <p onclick="toggleDropdown('authorDropdown')" class="dropbtn">Select Author</p>
+    <div id="authorDropdown" class="dropdown-content">
+      <% authors.forEach(author => { %>
+        <label><input type="checkbox" name="authors" value="<%= author %>"> <%= author %></label>
+      <% }) %>
+    </div>
+  </div>
+
+  
+  <button type="submit">Filter</button>
+  <!-- Add similar structure for the Author dropdown if needed -->
+  
+  <!-- Rest of your HTML code -->
+</form>
+
+  
+  <form id="searchForm">
+    <input type="text" id="searchText" name="text" placeholder="Search...">
+    <button type="submit" onclick="handleSearch('<%= pid %>' , event )">Search</button>
+  </form>
+
+  <h3>Issues of project -: <%= project[0].title %></h3>
+    <!-- Display issues -->
+    <div class="issues-list">
+      <% issues.forEach(issue => { %>
+        <div class="issue-item"  id = "<%=issue._id%>">
+          <p><strong>Issue:</strong><%= issue.title %></p>
+          <p><strong>Description:</strong> <%= issue.description %></p>
+          <p><strong>Label:</strong> <%= issue.label %></p>
+          <p><strong>Author:</strong> <%= issue.author %></p>
+          <!-- Add any other issue details as needed -->
+          <a href="#" class="remove-link" onclick="removeIssue('<%= project[0]._id %>' ,'<%= issue._id %>')">Remove</a>
+        </div>
+      <% }) %>
+    </div>
+  
+<script src="/js/issue_script.js"></script>
+
+</body>
+</html>
+
+
